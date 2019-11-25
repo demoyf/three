@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-    entry: './index.js',
+    entry: {
+        ThreeTextWorker: './ThreeTextWorker.js',
+        ThreeTextEle: './ThreeTextEle.js',
+    },
     output: {
-    filename: '[hash].min.js',
-    path: path.resolve(__dirname, './dist')
+        filename: '[name].min.js',
+        path: path.resolve(__dirname, './dist')
     },
     module: {
         rules: [
