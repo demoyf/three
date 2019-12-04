@@ -25,10 +25,9 @@ function WebGLTextures( _gl, extensions, state, properties, capabilities, utils,
 	function createCanvas( width, height ) {
 
 		// Use OffscreenCanvas when available. Specially needed in web workers
-
-		return useOffscreenCanvas ?
-			new OffscreenCanvas( width, height ) :
-			document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' );
+		
+		// ---xyf, offscreenCanvas no support in 360 browser
+		return document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' );
 
 	}
 

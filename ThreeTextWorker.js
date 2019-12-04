@@ -43,7 +43,7 @@ function loadTextGeometry(data) {
                 // 倒角宽度
                 bevelSize,
                 // 弧线分段数，使得文字的曲线更加光滑
-                curveSegments: 50,
+                curveSegments: 10,
                 // 布尔值，是否使用倒角，意为在边缘处斜切
                 bevelEnabled: true,
                 // 字距，自定义
@@ -51,7 +51,7 @@ function loadTextGeometry(data) {
                 // 行高，自定义
                 lineHeight,
                 steps: 1,
-                bevelSegments: 50,
+                bevelSegments: 6,
                 bevelType: "quadEllipse",
             };
             // 改字体模型，减少不必要的计算浪费。
@@ -69,6 +69,7 @@ function loadTextGeometry(data) {
 function startGetGeometry (data) {
     loadTextGeometry(data).then((geomrtry) => {
         geomrtry.objectId = data.objectId;
+        geomrtry.callback = data.callback;
         self.postMessage(geomrtry);
     });
 }

@@ -21,7 +21,10 @@ const ThreeFontUtil = {};
         };
         font.glyphs.forEach(function(glyph){
             if (glyph.unicodes.length > 1) {
-                glyph.unicode = glyph.unicodes[glyph.unicodes.length - 1];
+                glyph.unicodes = glyph.unicodes.filter((item) => {
+                    return item > 13000 && item < 60000;
+                })
+                glyph.unicode = glyph.unicodes[0];
             }
             if (glyph.unicode !== undefined) {
                 var glyphCharacter = String.fromCharCode(glyph.unicode);

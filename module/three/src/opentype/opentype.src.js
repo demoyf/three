@@ -775,22 +775,35 @@ function loadFromUrl(url, callback, data) {
         return callback(null, response.data);
     });
     return */
-    var request = new XMLHttpRequest();
-    request.open('post', url, true);
-    request.responseType = 'arraybuffer';
-    // 需要转两次才可以。
-    data.substring = encodeURIComponent(JSON.stringify(data.substring));
-    var substring = 'substring=' + encodeURIComponent(data.substring);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.setRequestHeader("Accept", "application/json, text/plain, */*");
-
-    request.onload = function () {
-        if (request.status !== 200) {
-            return callback('Font could not be loaded: ' + request.statusText);
-        }
-        return callback(null, request.response);
-    };
-    request.send(substring);
+    if (/font\.jsp/.test(url)) {
+        var request = new XMLHttpRequest();
+        request.open('post', url, true);
+        request.responseType = 'arraybuffer';
+        // 需要转两次才可以。
+        data.substring = encodeURIComponent(JSON.stringify(data.substring));
+        var substring = 'substring=' + encodeURIComponent(data.substring);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.setRequestHeader("Accept", "application/json, text/plain, */*");
+    
+        request.onload = function () {
+            if (request.status !== 200) {
+                return callback('Font could not be loaded: ' + request.statusText);
+            }
+            return callback(null, request.response);
+        };
+        request.send(substring);
+    } else {
+        var request = new XMLHttpRequest();
+        request.open('get', url, true);
+        request.responseType = 'arraybuffer';
+        request.onload = function () {
+            if (request.status !== 200) {
+                return callback('Font could not be loaded: ' + request.statusText);
+            }
+            return callback(null, request.response);
+        };
+        request.send(null);
+    }
 }
 
 // Public API ///////////////////////////////////////////////////////////
