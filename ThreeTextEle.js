@@ -1,33 +1,33 @@
 // three.js 部分有做一些修改，修改后的资源文件放在module/three 目录下，opentype也在其中。（修改的内容都是js，没有动ts）
 
-import { MixOperation,MirroredRepeatWrapping } from 'three/src/constants';
-import { MeshStandardMaterial } from 'three/src/materials/MeshStandardMaterial';
-import { MeshBasicMaterial } from 'three/src/materials/MeshBasicMaterial';
-import { ShaderMaterial } from 'three/src/materials/ShaderMaterial';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import { Color } from 'three/src/math/Color';
-import { Scene } from 'three/src/scenes/Scene';
-import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer';
-import { Group } from 'three/src/objects/Group';
-import { PerspectiveCamera } from 'three/src/cameras/PerspectiveCamera';
+import { MixOperation,MirroredRepeatWrapping } from './module/three/src/constants';
+import { MeshStandardMaterial } from './module/three/src/materials/MeshStandardMaterial';
+import { MeshBasicMaterial } from './module/three/src/materials/MeshBasicMaterial';
+import { ShaderMaterial } from './module/three/src/materials/ShaderMaterial';
+import { TextureLoader } from './module/three/src/loaders/TextureLoader';
+import { Color } from './module/three/src/math/Color';
+import { Scene } from './module/three/src/scenes/Scene';
+import { WebGLRenderer } from './module/three/src/renderers/WebGLRenderer';
+import { Group } from './module/three/src/objects/Group';
+import { PerspectiveCamera } from './module/three/src/cameras/PerspectiveCamera';
 
-import { AmbientLight } from 'three/src/lights/AmbientLight';
-import { PointLight } from 'three/src/lights/PointLight';
-import { PointLightHelper } from 'three/src/helpers/PointLightHelper';
-import { SpotLight } from 'three/src/lights/SpotLight';
-import { SpotLightHelper } from 'three/src/helpers/SpotLightHelper';
-import { DirectionalLight } from 'three/src/lights/DirectionalLight';
-import { DirectionalLightHelper } from 'three/src/helpers/DirectionalLightHelper';
-import { AxesHelper } from 'three/src/helpers/AxesHelper';
+import { AmbientLight } from './module/three/src/lights/AmbientLight';
+import { PointLight } from './module/three/src/lights/PointLight';
+import { PointLightHelper } from './module/three/src/helpers/PointLightHelper';
+import { SpotLight } from './module/three/src/lights/SpotLight';
+import { SpotLightHelper } from './module/three/src/helpers/SpotLightHelper';
+import { DirectionalLight } from './module/three/src/lights/DirectionalLight';
+import { DirectionalLightHelper } from './module/three/src/helpers/DirectionalLightHelper';
+import { AxesHelper } from './module/three/src/helpers/AxesHelper';
 
-import { CubeTexture } from 'three/src/textures/CubeTexture';
-import { CanvasTexture } from 'three/src/textures/CanvasTexture';
-import { Texture } from 'three/src/textures/Texture';
-import { Vector3 } from 'three/src/math/Vector3';
-import { Box3 } from 'three/src/math/Box3';
-import { Mesh } from 'three/src/objects/Mesh';
-import { BufferGeometry } from 'three/src/core/BufferGeometry.js';
-import { BufferAttribute,Float32BufferAttribute } from 'three/src/core/BufferAttribute';
+import { CubeTexture } from './module/three/src/textures/CubeTexture';
+import { CanvasTexture } from './module/three/src/textures/CanvasTexture';
+import { Texture } from './module/three/src/textures/Texture';
+import { Vector3 } from './module/three/src/math/Vector3';
+import { Box3 } from './module/three/src/math/Box3';
+import { Mesh } from './module/three/src/objects/Mesh';
+import { BufferGeometry } from './module/three/src/core/BufferGeometry.js';
+import { BufferAttribute,Float32BufferAttribute } from './module/three/src/core/BufferAttribute';
 
 
 (function (global, factory) {

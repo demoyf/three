@@ -1,7 +1,7 @@
 // three.js 部分有做一些修改，修改后的资源文件放在module/three 目录下，opentype也在其中。（修改的内容都是js，没有动ts）
 
-import { FontLoader } from 'three/src/loaders/FontLoader';
-import { ExtrudeBufferGeometry } from 'three/src/geometries/ExtrudeGeometry';
+import { FontLoader } from './module/three/src/loaders/FontLoader';
+import { ExtrudeBufferGeometry } from './module/three/src/geometries/ExtrudeGeometry';
 function loadText(fontSource, data = {}) {
     return new Promise((reslove, reject) => {
         const loader = new FontLoader();
